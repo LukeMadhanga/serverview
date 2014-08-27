@@ -18,7 +18,7 @@
             T.c = ++count;
             T.attr({'data-serverviewid': T.c});
             var s = $.extend({
-                maxFiles: 100,
+                limit: 100,
                 path: null,
                 position: false,
                 randomize: false,
@@ -34,7 +34,7 @@
                 url: s.path,
                 type: 'post',
                 dataType: 'json',
-                data: {limit: s.maxFiles, startat: s.startAt, randomize: s.randomize}
+                data: {limit: s.limit, startat: s.startAt, randomize: s.randomize}
             }).done(function (e) {
                 var paths = e.data,
                 len = paths.length;

@@ -32,10 +32,14 @@ class cGetFiles {
             throw new Exception('Attempted to access a restricted directory: ' . self::$directory);
         }
         $startat = (int) filter_input(INPUT_POST, 'startat');
-        $limit = (int) filter_input(INPUT_POST, 'limit');
+        $limit = filter_input(INPUT_POST, 'limit');
         $randomize = filter_input(INPUT_POST, 'randomize');
         $files = glob(self::$directory . '/*.{' . self::$extensions . '}', GLOB_BRACE);
-        $output = array_slice($files, $startat, $limit);
+        if ($limit === "false") {
+            $output = array_slice($files, $startat);
+        } else {
+            $output = array_slice($files, $startat, $limit);
+        }
         if ($randomize) {
             // The user wants us to randomize the output
             shuffle($output);

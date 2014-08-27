@@ -20,8 +20,8 @@ echo <<<HTML
             .containers {padding: 20px 0;margin: auto;}
             #contents {width: 1000px;margin: 20px auto;}
             .imgcontainer {width: 200px;height: 200px;overflow: hidden;display: inline-block;}
-            img {-webkit-transition: -webkit-filter 0.8s;-webkit-filter: grayscale(100%);}
-            img:hover {-webkit-filter: grayscale(0%);}
+            img {-webkit-transition: -webkit-filter 3s;-webkit-filter: grayscale(100%);}
+            img:hover {-webkit-filter: grayscale(0%);-webkit-transition: -webkit-filter 0.8s;}
         </style>
     </head>
     <body>
